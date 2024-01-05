@@ -9,11 +9,9 @@ import './index.css';
 
 function App() {
     return(
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="painelShoppingDarkMode">
         <HelmetProvider>
-            <Helmet>
-                <title>Shopping app</title>
-            </Helmet>
+            <Helmet titleTemplate="%s - PainelApp"/>
             <Toaster richColors />
             <RouterProvider router={router}/>
         </HelmetProvider>
