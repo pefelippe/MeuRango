@@ -8,7 +8,7 @@ function LandingPage() {
       <Helmet title="Inicio"/>
       <Header/>
 
-      <div className="min-h-screen text-slate-950 max-md:px-6  items-center
+      <div className="min-h-screen text-slate-950 max-md:px-6  items-center dark:bg-muted
         justify-center mx-auto max-w-6xl h-full  gap-16 grid grid-cols-2 ">
 
         <div className="w-full flex flex-col  gap-6 justify-center ">
