@@ -1,8 +1,8 @@
 import { Separator } from "@/components/ui/separator"
 import { Home, Pizza, UtensilsCrossedIcon } from "lucide-react"
+
 import AccountMenu from "./account-menu"
 import NavLink from "./nav-link"
-import { ModeToggle } from "./ui/mode-toggle"
 
 function Header() {
   return (
@@ -16,7 +16,6 @@ function Header() {
         </nav>
 
         <AccountMenu/>
-        <ModeToggle />
 
       </div>
     </div>
