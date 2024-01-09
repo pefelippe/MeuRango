@@ -16,7 +16,7 @@ export function Login() {
 
   const {register, handleSubmit, formState:{isSubmitting} } = useForm()
 
-  async function handleSignIn(data : SignInForm) {
+  async function handleSignIn(data: any): Promise<void> {
       try {
         await new Promise (res => setTimeout(res, 1000))
         toast.success("Enviamos um link de autenticação para seu e-mail", {
