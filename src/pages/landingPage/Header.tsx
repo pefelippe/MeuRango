@@ -1,27 +1,22 @@
+import Logo from "@/components/Logo"
 import { Button } from "@/components/ui/button"
+import { LogIn } from "lucide-react"
 import { Link } from "react-router-dom"
 
 function Header() {
   return (
-    <header className='h-20 fixed w-screen items-center border-b flex justify-center bg-white'>
-      <div className="flex w-full max-w-7xl justify-between items-center">
-        <h1 className="font-bold text-2xl">zappi</h1>
+    <header className='h-20 absolute top-0 w-screen items-center flex justify-center  text-blue-700 bg-white dark:bg-muted-foreground max-md:px-6'>
+      <div className="flex w-full max-w-6xl justify-between items-center">
+        <Logo />
         <div className="flex gap-3">
         <Button
-            className='text-md py-6 w-[150px] font-medium   hover:underline' 
-            >
-            <Link to="/dashboard" className=''>
-              Acessar seu painel
-            </Link>
-          </Button> 
-          <Button
-            variant={"destructive"}
-            className='text-md py-6 font-medium  w-[150px]  hover:underline' 
-            >
-            <Link to="/dashboard" className=''>
-              Visite a  Demo
-            </Link>
-          </Button> 
+          variant={"outline"}
+          className='text-lg  p-6  font-medium border-blue-700 hover:underline' 
+          >
+          <Link to="/login" className='flex gap-2 items-center'>
+            Entrar <LogIn/>
+          </Link>
+        </Button> 
         </div>
       </div>
     </header>

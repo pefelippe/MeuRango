@@ -4,14 +4,21 @@ import { SignUp } from "./Sign-up"
 
 function LandingPage() {
   return (
-    <div>
+    <div className="">
       <Helmet title="Inicio"/>
       <Header/>
 
-      <div className="min-h-screen text-slate-950 items-center justify-between mx-auto max-w-7xl h-full flex gap-20">
-        <div className="w-full flex flex-col max-w-xl gap-6">
-          <h1 className="text-7xl font-bold tracking-normal leading-[1.2]">Potencialize e automatize seu delivery.</h1>
-          <h3 className="text-xl font-thin">Oferecer um atendimento rápido, prático e lucrativo com a Zappi, gerenciando pedidos, cardápio digital e muito mais. </h3>
+      <div className="min-h-screen text-slate-950 max-md:px-6  items-center
+        justify-center mx-auto max-w-6xl h-full  gap-16 grid grid-cols-2 ">
+
+        <div className="w-full flex flex-col  gap-6 justify-center ">
+          <p className="uppercase tracking-wide font-semibold text-lg">totalmente grátis</p>
+          <h1 className="text-7xl font-extrabold pb-4">Potencialize seu delivery.</h1>
+          <h3 className="text-xl font-normal max-w-md ">Software de ponto de venda para todos os tipos de negócios gastronômicos. </h3>
+
+          <div>
+
+          </div>
         </div>
         <SignUp/>
       </div>

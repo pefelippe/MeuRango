@@ -31,13 +31,13 @@ export function Login() {
   return (
     <>
       <Helmet title="Login"/>
-      <div className=" flex-col
+      <div className=" flex-col p-16
        flex justify-center items-start w-full min-h-screen gap-2 ">
 
         <form onSubmit={handleSubmit(handleSignIn)} 
-          className="flex flex-col justify-start text-start items-start w-full mx-auto">
+          className="flex flex-col justify-start text-start items-start w-full mx-auto max-w-2xl">
 
-          <div className='flex flex-col justify-start text-start items-start space-y-6 w-full max-w-xl'>
+          <div className='flex flex-col justify-start text-start items-start space-y-6 w-full '>
             <h1 className='text-7xl font-bold tracking-tight text-primary'>Acesse seu painel.</h1>
             <p className='text-2xl font-thin'>Digite abaixo o seu email de cadastro:</p>
 
@@ -48,10 +48,10 @@ export function Login() {
  
               <Button 
                 disabled={isSubmitting} 
-                className='text-md  py-7 mx-auto font-medium px-8 w-full hover:underline' 
+                className='text-lg  py-7 mx-auto font-medium px-8 w-full hover:underline' 
                 >
                 <Link to="/dashboard" className=''>
-                  Acessar seu painel
+                  Acessar
                 </Link>
               </Button>        
             </div>
