@@ -11,7 +11,7 @@ function App() {
     return(
         <ThemeProvider defaultTheme="dark" storageKey="painelShoppingDarkMode">
         <HelmetProvider>
-            <Helmet titleTemplate="%s - PainelApp"/>
+            <Helmet titleTemplate="%s - Zappi"/>
             <Toaster richColors />
             <RouterProvider router={router}/>
         </HelmetProvider>

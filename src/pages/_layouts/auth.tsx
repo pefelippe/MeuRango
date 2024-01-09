@@ -1,21 +1,16 @@
-import { Pizza } from 'lucide-react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export function AuthLayout() {
   return (
-    <div className="grid min-h-screen grid-cols-2 antialiased">
-      <div className="flex h-full flex-col justify-between border-r border-foreground/5 bg-muted p-10 text-muted-foreground">
-        <div className="flex items-center gap-3 text-lg text-foreground">
-          <Pizza className="h-5 w-5" />
-          <span className="font-semibold">pizza.shop</span>
-        </div>
-
-        <footer className="text-sm">
-          Painel do parceiro &copy; pizza.shop - {new Date().getFullYear()}
+    <div className="relative flex h-full w-full">
+      <div className="flex flex-col text-start w-fit min-h-screen justify-between  max-w-xs p-10 px-20
+       text-muted-foreground bg-primary">
+        <Link to="/" className=" font-semibold text-white tracking-tight text-3xl">Zappi</Link>
+        <footer className="text-sm text-gray-300">
+          Painel do parceiro  - {new Date().getFullYear()}
         </footer>
       </div>
-
-      <div className="flex flex-col items-center justify-center">
+      <div className="w-full h-full flex flex-col max-w-5xl mx-auto ">
         <Outlet />
       </div>
     </div>
