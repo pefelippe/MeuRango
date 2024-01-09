@@ -32,16 +32,16 @@ export function Login() {
     <>
       <Helmet title="Login"/>
       <div className=" flex-col p-16
-       flex justify-center items-start w-full min-h-screen gap-2 ">
+       flex justify-center items-start w-full md:min-h-screen gap-2 ">
 
         <form onSubmit={handleSubmit(handleSignIn)} 
           className="flex flex-col justify-start text-start items-start w-full mx-auto max-w-2xl">
 
-          <div className='flex flex-col justify-start text-start items-start space-y-6 w-full '>
-            <h1 className='text-7xl font-bold tracking-tight text-primary'>Acesse seu painel.</h1>
-            <p className='text-2xl font-thin'>Digite abaixo o seu email de cadastro:</p>
+          <div className='flex flex-col justify-start text-start items-start space-y-5 w-full '>
+            <h1 className='text-6xl font-bold tracking-tight text-primary'>Acesse seu painel.</h1>
+            <p className='text-xl font-thin'>Digite abaixo o seu email de cadastro:</p>
 
-            <div className='flex w-full flex-col  gap-5 '>
+            <div className='flex w-full flex-col max-w-lg  gap-5 '>
               <Input className="text-md rounded  py-7
               text-gray-950 w-full focus-visible:ring-black" 
               id="email" {...register('email')} placeholder='Escreva aqui seu email'/>
@@ -51,9 +51,10 @@ export function Login() {
                 className='text-lg  py-7 mx-auto font-medium px-8 w-full hover:underline' 
                 >
                 <Link to="/dashboard" className=''>
-                  Acessar
+                  Acessar painel
                 </Link>
-              </Button>        
+              </Button>
+  
             </div>
           </div>
         </form>

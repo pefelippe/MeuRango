@@ -1,11 +1,12 @@
-import { Link, Outlet } from 'react-router-dom'
+import Logo from '@/components/Logo'
+import { Outlet } from 'react-router-dom'
 
 export function AuthLayout() {
   return (
-    <div className="relative flex h-full w-full">
-      <div className="flex flex-col text-start w-full min-h-screen justify-between   p-10 px-20
-       text-muted-foreground bg-primary">
-        <Link to="/" className=" font-semibold text-white tracking-tight text-3xl">Zappi</Link>
+    <div className="relative  h-full w-full gap-16 grid grid-cols-1 md:grid-cols-2 "> 
+      <div className="flex md:flex-col text-start w-full md:min-h-screen justify-between   p-10 px-20
+       text-white bg-primary max-md:items-center">
+        <Logo/>
         <footer className="text-sm text-gray-300">
           Painel do parceiro  - {new Date().getFullYear()}
         </footer>
