@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
 import { LogIn } from "lucide-react";
 import Hero from "./hero";
-import Plans from "./plans";
 import Testimonials from "./testimonials";
 
 function Header() {
   return (
     <header
-      className="h-20 absolute top-0 w-screen items-center flex justify-center border-b
+      className="h-20 fixed bg-white z-20 top-0 w-screen items-center flex justify-center border-b
       text-blue-700 max-md:px-6"
     >
       <div className="flex w-full max-w-6xl justify-between items-center">
@@ -51,7 +50,8 @@ function LandingPage() {
       />
       <Header />
       <Hero />
-      <Plans />
+      {/* <Services /> */}
+      {/* <Plans /> */}
       <Testimonials />
       <Footer />
     </div>

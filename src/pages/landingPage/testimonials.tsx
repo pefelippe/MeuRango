@@ -33,7 +33,7 @@ const testimonials = [
   {
     name: "Tony Stark",
     quote:
-      "Como um empresário ocupado, esse app é uma mão na roda! Visualizar os gráficos de desempenho em tempo real me ajuda a tomar decisões rápidas para melhorar meus negócios.",
+      "Como um empresário ocupado, esse app é uma mão na roda! Visualizar os gráficos de desempenho em tempo real me ajuda a tomar decisões rápidas.",
     avatarUrl:
       "https://t.ctcdn.com.br/jSEs-a2AsizaO2xZCQXcdbGPZW0=/i490793.jpeg",
     role: "CEO da Stark Industries",
@@ -50,7 +50,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <div className="w-full h-full max-w-6xl items-center flex mx-auto flex-col max-md:px-6 py-16 gap-10 overflow-hidden">
+    <div className="w-full h-full  items-center flex mx-auto flex-col max-md:px-6 py-16 gap-10 overflow-hidden bg-muted-foreground/5">
       <h3 className="max-w-2xl mx-auto text-5xl font-bold text-blue-800 text-center">
         Conheça a opinião dos nossos clientes
       </h3>
@@ -67,13 +67,10 @@ function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem
                 key={index}
-                className=" md:basis-1/4 lg:basis-1/3 px-6"
+                className=" md:basis-1/4 lg:basis-1/3 px-6  "
               >
-                <div className="flex flex-col px-4 py-5 sm:p-6 ">
-                  <q className="flex-1 text-gray-600 dark:text-gray-300">
-                    {testimonial.quote}
-                  </q>
-                  <div className="mt-6 flex gap-3">
+                <div className="flex flex-col px-4 py-5 sm:p-6 bg-white rounded-md h-full border justify-start">
+                  <div className="mb-6 flex gap-3 items-center">
                     <span className="inline-flex rounded-full">
                       <img
                         className="h-14 w-14 rounded-full object-cover"
@@ -85,7 +82,7 @@ function Testimonials() {
                       />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                      <p className="text-md font-semibold text-gray-900 dark:text-white">
                         {testimonial.name}
                       </p>
                       <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -93,6 +90,10 @@ function Testimonials() {
                       </p>
                     </div>
                   </div>
+
+                  <q className="flex-1 text-gray-600 dark:text-gray-300 h-full items-center justify-center">
+                    {testimonial.quote}
+                  </q>
                 </div>
               </CarouselItem>
             ))}

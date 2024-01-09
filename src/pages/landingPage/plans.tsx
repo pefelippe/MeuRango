@@ -2,7 +2,7 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 function Plans() {
   return (
-    <div className="h-fit 4 w-screen bg-muted-foreground/5 py-16 gap-10 flex flex-col max-xl:px-6">
+    <div className="h-fit 4 w-screen  pt-10 pb-20 gap-10 flex flex-col max-xl:px-6">
       <h3 className="max-w-xl mx-auto text-5xl font-bold text-blue-800 text-center">
         Conheça nossos planos
       </h3>
