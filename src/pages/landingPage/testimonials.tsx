@@ -55,7 +55,7 @@ function Testimonials() {
         Conheça a opinião dos nossos clientes
       </h3>
 
-      <div className="mx-auto max-w-xs md:max-w-5xl ">
+      <div className="mx-auto max-w-xs md:max-w-5xl  pb-10">
         <Carousel
           opts={{
             loop: true,

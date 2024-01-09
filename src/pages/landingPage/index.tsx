@@ -10,7 +10,7 @@ import Testimonials from "./testimonials";
 function Header() {
   return (
     <header
-      className="h-20 fixed bg-white z-20 top-0 w-screen items-center flex justify-center border-b
+      className="h-20 fixed bg-white z-20 top-0 w-full items-center flex justify-center border-b
       text-blue-700 max-md:px-6"
     >
       <div className="flex w-full max-w-6xl justify-between items-center">
