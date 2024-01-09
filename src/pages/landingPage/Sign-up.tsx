@@ -4,16 +4,15 @@ import { Label } from '@/components/ui/label';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { z } from 'zod';
 
-const signUpForm = z.object({
-  email: z.string().email(),
-  restaurantName: z.string(),
-  managerName: z.string(),
-  phone: z.string(),
-})
+// const signUpForm = z.object({
+//   email: z.string().email(),
+//   restaurantName: z.string(),
+//   managerName: z.string(),
+//   phone: z.string(),
+// })
 
-type signUpForm = z.infer<typeof signUpForm>
+// type signUpForm = z.infer<typeof signUpForm>
 
 export function SignUp() {
 
