@@ -49,20 +49,26 @@ export function Login() {
 
             <div className="flex w-full flex-col max-w-lg  gap-5 ">
               <Input
-                className="text-md rounded  py-7
-              text-gray-950 w-full focus-visible:ring-black"
+                className="text-md rounded py-6 text-gray-950 w-full focus-visible:ring-black"
                 id="email"
                 {...register("email")}
-                placeholder="Escreva aqui seu email"
+                placeholder="Escreva aqui seu email:"
               />
 
               <Button
-                disabled={isSubmitting}
-                className="text-lg  py-7 mx-auto font-medium px-8 w-full hover:underline"
+                disabled
+                className="text-lg  py-6 mx-auto font-medium px-8 w-full hover:underline"
               >
-                <Link to="/dashboard" className="">
+                <Link to="" className="">
                   Iniciar Sessão
                 </Link>
+              </Button>
+
+              <Button
+                disabled={isSubmitting}
+                className="text-lg  py-6 mx-auto font-medium px-8 w-full hover:underline"
+              >
+                <Link to="/dashboard">Iniciar Sessão [Demo]</Link>
               </Button>
             </div>
           </div>

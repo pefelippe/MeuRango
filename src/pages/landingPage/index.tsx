@@ -1,9 +1,9 @@
+import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
+import { LogIn } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
-import Logo from "@/components/Logo";
-import { LogIn } from "lucide-react";
 import Hero from "./hero";
 import Testimonials from "./testimonials";
 
@@ -13,7 +13,7 @@ function Header() {
       className="h-20 fixed bg-white z-20 top-0 w-full items-center flex justify-center border-b
       text-blue-700 max-md:px-6"
     >
-      <div className="flex w-full max-w-6xl justify-between items-center">
+      <div className="flex w-full max-w-6xl justify-between items-center ">
         <Logo />
         <div className="flex gap-3">
           <Button
@@ -35,7 +35,7 @@ function Header() {
 
 const Footer = () => {
   return (
-    <footer className="h-16  w-screen mx-auto border-t flex items-center justify-center">
+    <footer className="h-16  w-screen mx-auto border-t flex items-center justify-center bg-[#101010] text-[#fafafa]">
       Zappi © 2024. All rights reserved.
     </footer>
   );

@@ -1,13 +1,14 @@
 import Foods from "./foods";
 import Info from "./info";
 
-function index() {
+function Store() {
   return (
-    <div>
+    <div className="min-h-screen w-full flex max-md:flex-col mx-auto pb-10">
+      {/* <Header /> */}
       <Info />
       <Foods />
     </div>
   );
 }
 
-export default index;
+export default Store;
