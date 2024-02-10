@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
 const testimonials = [
   {
     name: "Pablo Escobar",
@@ -50,12 +51,12 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <div className="w-full h-full  items-center flex mx-auto flex-col max-md:px-6 py-16 gap-10 overflow-hidden bg-muted-foreground/5">
-      <h3 className="max-w-2xl mx-auto text-5xl font-bold text-blue-800 text-center">
+    <div className="w-full h-full  items-start flex mx-auto flex-col max-md:px-6  pt-10 pb-20 gap-10 overflow-hidden ">
+      <h3 className=" mx-auto text-5xl font-bold text-blue-800 text-start">
         Conheça a opinião dos nossos clientes
       </h3>
 
-      <div className="mx-auto max-w-xs md:max-w-5xl  pb-10">
+      <div className="mx-auto max-w-xs md:max-w-5xl">
         <Carousel
           opts={{
             loop: true,
@@ -67,10 +68,10 @@ function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem
                 key={index}
-                className=" md:basis-1/4 lg:basis-1/3 px-6  "
+                className=" md:basis-1/4 lg:basis-1/3 px-6 "
               >
-                <div className="flex flex-col px-4 py-5 sm:p-6 bg-white rounded-md h-full border justify-start">
-                  <div className="mb-6 flex gap-3 items-center">
+                <div className="flex flex-col p-6 bg-white rounded-md h-full border justify-center ">
+                  <div className="mb-4 flex gap-3 items-center">
                     <span className="inline-flex rounded-full">
                       <img
                         className="h-14 w-14 rounded-full object-cover"
@@ -91,7 +92,7 @@ function Testimonials() {
                     </div>
                   </div>
 
-                  <q className="flex-1 text-gray-600 dark:text-gray-300 h-full items-center justify-center">
+                  <q className="flex-1 text-base text-gray-600 dark:text-gray-300 h-full items-center justify-center">
                     {testimonial.quote}
                   </q>
                 </div>

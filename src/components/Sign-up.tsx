@@ -39,7 +39,7 @@ export function SignUp() {
   return (
     <>
       <Card
-        className=" flex-col border-2 p-8 rounded-md shadow  h-fit w-full ml-auto max-w-md
+        className=" flex-col border-2 p-8 rounded-md shadow  h-fit w-full ml-auto lg:max-w-md
        flex  gap-2 "
       >
         <div className=" flex flex-col items-start justify-start gap-4 ">
