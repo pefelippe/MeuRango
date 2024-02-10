@@ -38,10 +38,7 @@ export function SignUp() {
   }
   return (
     <>
-      <Card
-        className=" flex-col border-2 p-8 rounded-md shadow  h-fit w-full ml-auto lg:max-w-md
-       flex  gap-2 "
-      >
+      <Card className=" flex-col border-2 p-5 md:p-8 rounded-md shadow  h-fit w-full ml-auto lg:max-w-md flex gap-2 ">
         <div className=" flex flex-col items-start justify-start gap-4 ">
           <div className="flex flex-col gap-2 text-start">
             <h1 className="text-4xl font-bold tracking-tight">

@@ -52,7 +52,7 @@ const testimonials = [
 function Testimonials() {
   return (
     <div className="w-full h-full  items-start flex mx-auto flex-col max-md:px-6  pt-10 pb-20 gap-10 overflow-hidden ">
-      <h3 className=" mx-auto text-5xl font-bold text-blue-800 text-start">
+      <h3 className=" mx-auto  text-3xl md:text-5xl font-bold text-blue-800 text-start">
         Conheça a opinião dos nossos clientes
       </h3>
 

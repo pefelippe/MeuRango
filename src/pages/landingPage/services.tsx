@@ -9,7 +9,7 @@ const services = [
   //     "Nosso robô com inteligência artificial responde às perguntas dos clientes, tornando o atendimento mais eficiente.",
   // },
   {
-    name: "Envio do cardápio digital",
+    name: "Cardápio digital",
     icon: <Menu className="w-16 h-16" />,
     description:
       "Quando o cliente solicita fazer um pedido, o robô envia o link do cardápio digital, que está otimizado para gerar pedidos sem a necessidade de cadastro.",
@@ -25,10 +25,10 @@ const services = [
 function Services() {
   return (
     <div className="h-fit w-full pt-10 pb-20 gap-10 flex flex-col  border-y bg-gray-50">
-      <h3 className="max-w-xl mx-auto text-5xl font-bold text-blue-800 text-center">
+      <h3 className="max-w-xl mx-auto text-3xl md:text-5xl font-bold text-blue-800 text-center">
         Nossos serviços
       </h3>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto w-full max-xl:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto w-full max-xl:px-6">
         {services.map((service) => {
           return (
             <Card className="p-4 rounded-xl bg-blue-100 gap-4 flex flex-col h-[350px] items-center justify-center border">
