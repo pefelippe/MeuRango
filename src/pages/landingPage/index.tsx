@@ -46,8 +46,8 @@ function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen  mt-16 min-w-[400px]">
       <Helmet
-        titleTemplate="Zappi - Sistema de Pedidos"
-        title="Zappi - Gestor de Pedidos"
+        titleTemplate="Zappi - Gerenciamento de pedidos e cardápio virtual personalizado."
+        title="Zappi - Gerenciamento de pedidos e cardápio virtual personalizado."
       />
       <Header />
       <Hero />

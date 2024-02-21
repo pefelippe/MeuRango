@@ -6,6 +6,7 @@ import { queryClient } from "./lib/react-query";
 import { router } from "./routes";
 
 import "./index.css";
+import { AuthGoogleProvider } from "./context/AuthGoogleContext";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <Helmet titleTemplate="%s - Zappi" />
       <Toaster richColors />
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <AuthGoogleProvider>
+          <RouterProvider router={router} />
+        </AuthGoogleProvider>
       </QueryClientProvider>
     </HelmetProvider>
   );

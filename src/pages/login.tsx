@@ -1,36 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { AuthGoogleContext } from "@/context/AuthGoogleContext";
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { useForm } from "react-hook-form";
+
 import { Link } from "react-router-dom";
-import { toast } from "sonner";
-
-// const signInForm = z.object({
-//   email: z.string().email()
-// })
-
-// type SignInForm = z.infer<typeof signInForm>
 
 export function Login() {
-  const {
-    register,
-    handleSubmit,
-    formState: { isSubmitting },
-  } = useForm();
+  const { signInGoogle } = useContext(AuthGoogleContext);
 
-  async function handleSignIn(data: any): Promise<void> {
-    try {
-      await new Promise((res) => setTimeout(res, 1000));
-      toast.success("Enviamos um link de autenticação para seu e-mail", {
-        action: {
-          label: "Reenviar",
-          onClick: () => handleSignIn(data),
-        },
-      });
-    } catch (err) {
-      toast.error("Credenciais invalidas.");
-    }
-  }
   return (
     <>
       <Helmet title="Login" />
@@ -38,41 +14,24 @@ export function Login() {
         className=" flex-col p-16
        flex justify-center items-start w-full md:min-h-screen gap-2 "
       >
-        <form
-          onSubmit={handleSubmit(handleSignIn)}
-          className="flex flex-col justify-start text-start items-start w-full mx-auto max-w-2xl"
-        >
-          <div className="flex flex-col justify-start text-start items-start space-y-5 w-full ">
-            <h1 className="text-6xl font-bold tracking-tight text-primary">
-              Acesse seu painel.
-            </h1>
+        <div className="flex flex-col justify-start text-start items-start space-y-5 w-full ">
+          <h1 className="text-6xl font-bold tracking-tight text-primary">
+            Acesse seu painel.
+          </h1>
 
-            <div className="flex w-full flex-col max-w-lg  gap-5 ">
-              <Input
-                className="text-md rounded py-6 text-gray-950 w-full focus-visible:ring-black"
-                id="email"
-                {...register("email")}
-                placeholder="Escreva aqui seu email:"
-              />
-
-              <Button
-                disabled
-                className="text-lg  py-6 mx-auto font-medium px-8 w-full hover:underline"
-              >
-                <Link to="" className="">
-                  Iniciar Sessão
-                </Link>
-              </Button>
-
-              <Button
-                disabled={isSubmitting}
-                className="text-lg  py-6 mx-auto font-medium px-8 w-full hover:underline"
-              >
-                <Link to="/dashboard">Iniciar Sessão [Demo]</Link>
-              </Button>
-            </div>
+          <div className="flex w-full flex-col max-w-lg  gap-5 ">
+            <button
+              className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline border rounded"
+              onClick={signInGoogle}
+            >
+              {" "}
+              Entrar com Google
+            </button>
+            <button className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline rounded bg-blue-500 text-white">
+              <Link to="/dashboard">Modo Demonstração</Link>
+            </button>
           </div>
-        </form>
+        </div>
       </div>
     </>
   );
