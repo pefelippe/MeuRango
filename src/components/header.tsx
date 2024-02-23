@@ -12,11 +12,11 @@ function Header() {
         <Logo />
         <Separator orientation="vertical" className="mx-3" />
         <nav className="flex items-center space-x-4 lg:space-x-6 mr-auto">
-          <NavLink to="/dashboard">
+          <NavLink to="/painel/dashboard">
             <Home />
             Inicio
           </NavLink>
-          <NavLink to="/orders">
+          <NavLink to="/painel/orders">
             <UtensilsCrossedIcon />
             Pedidos
           </NavLink>

@@ -131,7 +131,7 @@ function Header() {
             className="text-lg py-6 font-medium border-blue-700 hover:underline"
           >
             <Link
-              to="/login"
+              to="/painel/login"
               className="flex gap-1  items-center justify-center text-blue-700"
             >
               Acessar Painel <LogIn />

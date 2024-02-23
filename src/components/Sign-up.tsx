@@ -29,7 +29,7 @@ export function SignUp() {
       toast.success("Restaurante cadastrado com sucesso", {
         action: {
           label: "Login",
-          onClick: () => navigate("/sign-in"),
+          onClick: () => navigate("/painel/login"),
         },
       });
     } catch (err) {
