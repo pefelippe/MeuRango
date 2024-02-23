@@ -12,7 +12,8 @@ import {
 import { LogIn } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { services, testimonials } from "../../mockInfo.js";
+
+import { services, testimonials } from "../consts/mockInfo";
 
 function Hero() {
   return (

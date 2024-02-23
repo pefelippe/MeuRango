@@ -1,13 +1,12 @@
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 
-import { NotFound } from "./pages/404";
-
-import Logo from "./components/Logo";
 import Header from "./components/header";
-import Orders from "./pages/app/[private]/painel-orders/orders/orders";
-import Dashboard from "./pages/app/[private]/painel-orders/dashboard";
-import { Login } from "./pages/app/[public]/login";
-import LandingPage from "./pages/app/[public]/landing-page";
+import Logo from "./components/Logo";
+import LandingPage from "./pages";
+import { NotFound } from "./pages/404";
+import Dashboard from "./pages/painel/dashboard";
+import { Login } from "./pages/painel/login";
+import Orders from "./pages/painel/orders/orders";
 
 export function AppLayout() {
   return (

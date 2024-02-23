@@ -1,11 +1,14 @@
 import { AuthGoogleContext } from "@/context/AuthGoogleContext";
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Login() {
-  const { signInGoogle } = useContext(AuthGoogleContext);
+  const { signInGoogle, setDemonstrationUser, user } =
+    useContext(AuthGoogleContext);
+
+  const navigate = useNavigate();
+  user && navigate("/painel/dashboard");
 
   return (
     <>
@@ -24,10 +27,12 @@ export function Login() {
               className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline border rounded"
               onClick={signInGoogle}
             >
-              {" "}
               Entrar com Google
             </button>
-            <button className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline rounded bg-blue-500 text-white">
+            <button
+              className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline rounded bg-blue-500 text-white"
+              onClick={setDemonstrationUser}
+            >
               <Link to="/dashboard">Modo Demonstração</Link>
             </button>
           </div>

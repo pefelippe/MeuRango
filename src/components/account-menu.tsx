@@ -1,6 +1,7 @@
 import { Building, ChevronDown, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
+import { UserAuth } from "../context/AuthGoogleContext";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -12,6 +13,8 @@ import {
 } from "./ui/dropdown-menu";
 
 function AccountMenu() {
+  const { logOut, user } = UserAuth();
+  const navigate = useNavigate();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -19,16 +22,16 @@ function AccountMenu() {
           variant="outline"
           className="flex items-center gap-2 select-none"
         >
-          Demo Shop
+          {user?.displayName} Shop
           <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="flex flex-col">
-          <span>Demo Account</span>
+          <span>{user?.displayName}</span>
           <span className="text-xs font-formal text-muted-foreground">
-            demoaccount@gmail.com
+            {user?.email}
           </span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
@@ -37,11 +40,16 @@ function AccountMenu() {
             <Building /> <span className="px-3  w-full">Perfil da loja</span>
           </DropdownMenuItem>
         </Link>
-        <Link to="/" className="flex items-center ">
-          <DropdownMenuItem className="text-rose-500 dark:text-rose-400 w-full cursor-pointer">
-            <LogOut /> <span className="px-3  w-full">Sair</span>
-          </DropdownMenuItem>
-        </Link>
+
+        <DropdownMenuItem
+          className="text-rose-500 dark:text-rose-400 w-full cursor-pointer"
+          onClick={() => {
+            logOut();
+            navigate("/painel/login");
+          }}
+        >
+          <LogOut /> <span className="px-3  w-full">Sair</span>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
