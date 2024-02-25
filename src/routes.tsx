@@ -12,7 +12,7 @@ export function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col antialiased ">
       <Header />
-      <div className="p-8 py-4">
+      <div className="px-8 py-4 h-full w-full">
         <Outlet />
       </div>
     </div>

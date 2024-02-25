@@ -16,7 +16,7 @@ function Orders() {
     <div>
       <Helmet title="Gestão de Pedidos" />
       <div className="flex flex-col gap-3">
-        <h1 className="text-3xl font-bold tracking-tighter">Pedidos</h1>
+        <h1 className="text-2xl font-bold tracking-tighter">Pedidos</h1>
         <div className="space-y-2.5">
           <OrderTableFilters />
 
@@ -36,7 +36,7 @@ function Orders() {
               </TableHeader>
 
               <TableBody>
-                {Array.from({ length: 9 }).map((_, i) => {
+                {Array.from({ length: 10 }).map((_, i) => {
                   return <OrderTableRow key={i} />;
                 })}
               </TableBody>

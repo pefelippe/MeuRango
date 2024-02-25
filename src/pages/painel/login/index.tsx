@@ -33,7 +33,7 @@ export function Login() {
               className="text-lg  py-3 mx-auto font-medium px-8 w-full hover:underline rounded bg-blue-500 text-white"
               onClick={setDemonstrationUser}
             >
-              <Link to="/dashboard">Modo Demonstração</Link>
+              <Link to="/painel/dashboard">Modo Demonstração</Link>
             </button>
           </div>
         </div>
