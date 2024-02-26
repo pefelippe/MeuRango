@@ -6,8 +6,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Bar,
-  BarChart,
   CartesianGrid,
   Line,
   LineChart,

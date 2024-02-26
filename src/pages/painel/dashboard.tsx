@@ -21,7 +21,7 @@ function Dashboard() {
                 title="Receita total no período"
                 diff="+2% em relacao ao mes passado"
                 value="3.000,00"
-                icon=<DollarSign />
+                icon={<DollarSign />}
               />
               <CardInfo
                 title="Pedidos (hoje)"
@@ -33,7 +33,7 @@ function Dashboard() {
                 title="Pedidos cancelados (hoje)"
                 diff="+2% em relacao ao mes passado"
                 value="3"
-                icon=<LucideDelete />
+                icon={<LucideDelete />}
               />
             </div>
           </div>
