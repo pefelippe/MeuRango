@@ -124,7 +124,7 @@ function Header() {
       className="h-20 fixed bg-white z-20 top-0 w-full items-center flex justify-center border-b
        max-xl:px-6"
     >
-      <div className="flex w-full max-w-6xl justify-between items-center ">
+      <div className="flex w-full px-16 justify-between items-center ">
         <Logo />
         <div className="flex gap-3">
           <Button

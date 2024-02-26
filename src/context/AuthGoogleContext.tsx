@@ -53,16 +53,27 @@ export const AuthGoogleProvider = ({ children }: AuthGoogleProviderProps) => {
   };
 
   const setDemonstrationUser = () => {
-    setUser({});
+    setUser({
+      uid: "RCpu0bRhAAP8z9QOULS9taHvYSL2",
+      email: "demouser@gmail.com",
+      emailVerified: true,
+      displayName: "Demonstration User",
+      isAnonymous: false,
+      photoURL:
+        "https://lh3.googleusercontent.com/a/ACg8ocLpZXq8N_iy2xlcwVrYjouBcHiIXmjyS-1pU4CjSCyHcwtD=s96-c",
+
+      createdAt: "1708318439897",
+      lastLoginAt: "1708905100663",
+    });
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-    });
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     setUser(user);
+  //   });
 
-    return () => unsubscribe();
-  }, [user]);
+  //   return () => unsubscribe();
+  // }, [user]);
 
   return (
     <AuthGoogleContext.Provider

@@ -7,8 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { TableBody } from "@/components/ui/table";
-
-import OrderTableRecents from "../../orders/order-recent";
+import { OrderTableRecents } from "@/pages/painel/orders";
 
 export function RecentSales() {
   return (

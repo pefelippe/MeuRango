@@ -15,6 +15,8 @@ import {
 function AccountMenu() {
   const { logOut, user } = UserAuth();
   const navigate = useNavigate();
+
+  console.log(user);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,7 +24,7 @@ function AccountMenu() {
           variant="outline"
           className="flex items-center gap-2 select-none"
         >
-          {user?.displayName} Shop
+          {user?.displayName}
           <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
