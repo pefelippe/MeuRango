@@ -1,24 +1,25 @@
 # Meu Rango
-Cardárpio virtual e gestão de pedidos. 
 
-### Home Page
-![1](./screens//1.png)
-![2](./screens//2.png)
-![3](./screens//3.png)
-
-### Login 
-![4](./screens//4.png)
-
-### Dashboard 
-![6](./screens//5.png)
-
-### Pedidos 
-![6](./screens//6.png)
+Gerenciamento de pedidos e cardápio virtual personalizado. Acesso a gráficos de vendas, autenticação com Firebase. Interface criada com React, Next, Typecript, Tailwind e Firebase.
 
 ## Tecnologias
-- React
-- NextJS
-- Tailwind
-- Typescript
-- Firebase
-- ShadcnUI
+
+<img src="https://skillicons.dev/icons?i=javascript,react,nextjs,tailwind,typescript,firebase" />
+
+## Screenshots
+
+### Home Page
+
+![1](./screens//landing.png)
+
+### Login
+
+![4](./screens//login.png)
+
+### Dashboard
+
+![6](./screens//dashboard.png)
+
+### Pedidos
+
+![6](./screens//orders.png)
