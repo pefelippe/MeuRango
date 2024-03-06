@@ -1,37 +1,65 @@
 import Pagination from "@/components/pagination";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { ArrowRight, Search, X } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export function OrderDetails() {
+  const { t } = useTranslation();
+
   return (
     <DialogContent>
       <DialogHeader>
         <DialogTitle>Pedido: 19031839018903</DialogTitle>
-        <DialogDescription>Detalhes do pedido</DialogDescription>
+        <DialogDescription>{t("orderDetails.details")}</DialogDescription>
       </DialogHeader>
 
       <div className="space-y-6">
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell className="text-muted-foreground">Status</TableCell>
+              <TableCell className="text-muted-foreground">
+                {t("orderDetails.status")}
+              </TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-slate-400"></span>
                   <span className="font-medium text-muted-foreground">
-                    Pendentes
+                    {t("orderDetails.pending")}
                   </span>
                 </div>
               </TableCell>
             </TableRow>
 
             <TableRow>
-              <TableCell className="text-muted-foreground">Cliente</TableCell>
+              <TableCell className="text-muted-foreground">
+                {t("orderDetails.customer")}
+              </TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-slate-400"></span>
@@ -43,7 +71,9 @@ export function OrderDetails() {
             </TableRow>
 
             <TableRow>
-              <TableCell className="text-muted-foreground">Telefone</TableCell>
+              <TableCell className="text-muted-foreground">
+                {t("orderDetails.phone")}
+              </TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-slate-400"></span>
@@ -55,7 +85,9 @@ export function OrderDetails() {
             </TableRow>
 
             <TableRow>
-              <TableCell className="text-muted-foreground">E-mail</TableCell>
+              <TableCell className="text-muted-foreground">
+                {t("orderDetails.email")}
+              </TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-slate-400"></span>
@@ -68,7 +100,7 @@ export function OrderDetails() {
 
             <TableRow>
               <TableCell className="text-muted-foreground">
-                Realizado há
+                {t("orderDetails.placed")}
               </TableCell>
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
@@ -85,10 +117,10 @@ export function OrderDetails() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Produto</TableHead>
-              <TableHead>Qtd.</TableHead>
-              <TableHead>Preco</TableHead>
-              <TableHead>Subtotal</TableHead>
+              <TableHead>{t("orderDetails.product")}</TableHead>
+              <TableHead>{t("orderDetails.quantity")}</TableHead>
+              <TableHead>{t("orderDetails.price")}</TableHead>
+              <TableHead>{t("orderDetails.subtotal")}</TableHead>
             </TableRow>
           </TableHeader>
 
@@ -111,7 +143,7 @@ export function OrderDetails() {
           </TableBody>
 
           <TableFooter>
-            <TableCell colSpan={3}>Total do pedido</TableCell>
+            <TableCell colSpan={3}>{t("orderDetails.total")}</TableCell>
             <TableCell className="txt-right font-medium">R$259,60</TableCell>
           </TableFooter>
         </Table>
@@ -131,39 +163,54 @@ export function OrderTableRecents() {
 }
 
 function OrderTableFilters() {
+  const { t } = useTranslation();
+
   return (
     <form className="flex items-center gap-2">
-      <span className="text-sm font-semibold">Filtros:</span>
-      <Input placeholder="Id do pedido" className="h-8 w-auto" />
-      <Input placeholder="Nome do Cliente" className="h-8 w-[320px]" />
+      <span className="text-sm font-semibold">
+        {t("orderDetails.filters")}:
+      </span>
+      <Input placeholder={t("orderDetails.orderId")} className="h-8 w-auto" />
+      <Input
+        placeholder={t("orderDetails.customerName")}
+        className="h-8 w-[320px]"
+      />
       <Select defaultValue="all">
         <SelectTrigger className="h-8 w-[180px]">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="all">Todos</SelectItem>
-          <SelectItem value="pending">Pendente</SelectItem>
-          <SelectItem value="canceled">Cancelado</SelectItem>
-          <SelectItem value="processing">Em preparo</SelectItem>
-          <SelectItem value="delivering">Em entrega</SelectItem>
-          <SelectItem value="delivered">Entregue</SelectItem>
+          <SelectItem value="all">{t("orderDetails.all")}</SelectItem>
+          <SelectItem value="pending">{t("orderDetails.pending")}</SelectItem>
+          <SelectItem value="canceled">{t("orderDetails.canceled")}</SelectItem>
+          <SelectItem value="processing">
+            {t("orderDetails.processing")}
+          </SelectItem>
+          <SelectItem value="delivering">
+            {t("orderDetails.delivering")}
+          </SelectItem>
+          <SelectItem value="delivered">
+            {t("orderDetails.delivered")}
+          </SelectItem>
         </SelectContent>
       </Select>
 
       <Button type="submit" variant="secondary" size="sm">
         <Search className="mr-2 h-4 w-4" />
-        Filtrar resultados
+        {t("orderDetails.filterResults")}
       </Button>
 
       <Button type="button" variant="outline" size="sm">
         <X className="mr-2 h-4 w-4" />
-        Remover filtros
+        {t("orderDetails.clearFilters")}
       </Button>
     </form>
   );
 }
 
 function OrderTableRow() {
+  const { t } = useTranslation();
+
   return (
     <TableRow className="">
       <TableCell className="py-2">
@@ -171,7 +218,7 @@ function OrderTableRow() {
           <DialogTrigger asChild>
             <Button variant="outline" size="sm">
               <Search className="h-3 w-3"></Search>
-              <span className="sr-only">Detalhes do pedido</span>
+              <span className="sr-only">{t("orderDetails.details")}</span>
             </Button>
           </DialogTrigger>
           <OrderDetails />
@@ -185,7 +232,10 @@ function OrderTableRow() {
       <TableCell className="py-2 ">
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-slate-400"></span>
-          <span className="font-medium text-muted-foreground">Pendentes</span>
+          <span className="font-medium text-muted-foreground">
+            {" "}
+            {t("orderDetails.pending")}
+          </span>
         </div>
       </TableCell>
       <TableCell className="font-medium py-2">
@@ -209,6 +259,7 @@ function OrderTableRow() {
 }
 
 function Orders() {
+  const { t } = useTranslation();
   return (
     <div>
       <Helmet title="Gestão de Pedidos" />
@@ -221,11 +272,19 @@ function Orders() {
               <TableHeader>
                 <TableRow>
                   <TableHead className="w-[64px]"></TableHead>
-                  <TableHead className="w-[140px]">Identificado</TableHead>
-                  <TableHead className="w-[180px]">Realizado há</TableHead>
-                  <TableHead className="w-[140px]">Status</TableHead>
+                  <TableHead className="w-[140px]">
+                    {t("orderDetails.identifier")}
+                  </TableHead>
+                  <TableHead className="w-[180px]">
+                    {t("orderDetails.placedTime")}
+                  </TableHead>
+                  <TableHead className="w-[140px]">
+                    {t("orderDetails.status")}
+                  </TableHead>
                   <TableHead className="">Cliente</TableHead>
-                  <TableHead className="w-[140px]">Total do pedido</TableHead>
+                  <TableHead className="w-[140px]">
+                    {t("orderDetails.totalPrice")}
+                  </TableHead>
                   <TableHead className="w-[164px]"></TableHead>
                   <TableHead className="w-[164px]"></TableHead>
                 </TableRow>

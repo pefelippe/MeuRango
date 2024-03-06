@@ -1,0 +1,70 @@
+export default {
+  translations: {
+    pageTitle: "MeuRango - Order management and personalized virtual menu.",
+    footer: {
+      message: "MeuRango © 2024. All rights reserved.",
+    },
+    header: {
+      accessPainel: "Access Panel",
+    },
+    testimonial: {
+      message: "Discover what our customers think",
+    },
+    hero: {
+      title: "Automate your sales, access charts, and earn more money.",
+      description:
+        "Offer quick, convenient, and profitable service with Zappi, managing orders, automating sales, and much more.",
+    },
+    services: {
+      title: "Our services",
+    },
+    404: {
+      title: "Page not found",
+      backMessage: "Back to Dashboard",
+    },
+    dashboard: {
+      manage: "Manage your store",
+      title: "Dashboard",
+      totalRevenue: "Total revenue in period",
+      ordersToday: "Orders (today)",
+      canceledOrdersToday: "Canceled orders (today)",
+      backToDashboard: "Back to Dashboard",
+      diffComparedToLastMonth: "compared to last month",
+    },
+    orderDetails: {
+      order: "Order",
+      details: "Order details",
+      filters: "Filters",
+      status: "Status",
+      customer: "Customer",
+      phone: "Phone",
+      email: "Email",
+      placed: "Placed",
+      total: "Total",
+      minutesAgo: "minutes ago",
+      pending: "Pending",
+      pendingStatus: "+$",
+      orderId: "Order ID",
+      product: "Product",
+      quantity: "Quantity",
+      price: "Price",
+      subtotal: "Subtotal",
+      customerName: "Customer Name",
+      all: "All",
+      canceled: "Canceled",
+      processing: "Processing",
+      delivering: "Delivering",
+      delivered: "Delivered",
+      filterResults: "Filter results",
+      clearFilters: "Clear filters",
+      identifier: "Identifier",
+      placedTime: "Placed time",
+      totalPrice: "Total price",
+    },
+    login: {
+      title: "Access your panel.",
+      signInGoogle: "Sign in with Google",
+      demonstrationMode: "Demonstration Mode",
+    },
+  },
+};

@@ -7,6 +7,7 @@ import { AuthGoogleProvider } from "./context/AuthGoogleContext";
 import { queryClient } from "./lib/react-query";
 import { router } from "./routes";
 
+import './i18n'
 import "./index.css";
 
 function App() {

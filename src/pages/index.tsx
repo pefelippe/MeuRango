@@ -12,10 +12,11 @@ import {
 import { LogIn } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import { services, testimonials } from "../consts/mockInfo";
 
 function Hero() {
+  const { t } = useTranslation();
   return (
     <div
       className=" text-slate-950 max-md:px-6  items-center dark:text-white max-xl:px-6
@@ -23,11 +24,10 @@ function Hero() {
     >
       <div className="w-full flex flex-col gap-4 justify-center ">
         <h1 className="text-5xl md:text-[70px] font-bold ">
-          Automatize suas vendas, acesse gráficos e ganhe mais dinheiro.
+          {t("hero.title")}
         </h1>
         <h3 className="text-xl font-thin max-w-xl dark:text-gray-300 py-3">
-          Ofereça um atendimento rápido, prático e lucrativo com a Zappi,
-          gerindo pedidos, automatizando vendas e muito mais.
+          {t("hero.description")}
         </h3>
       </div>
       <SignUp />
@@ -36,10 +36,11 @@ function Hero() {
 }
 
 function Services() {
+  const { t } = useTranslation();
   return (
     <div className="h-fit w-full pt-10 pb-20 gap-10 flex flex-col  border-y bg-gray-50">
       <h3 className="max-w-xl mx-auto text-3xl md:text-5xl font-bold text-blue-800 text-center">
-        Nossos serviços
+        {t("services.title")}
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto w-full max-xl:px-6">
         {services.map((service) => {
@@ -61,10 +62,11 @@ function Services() {
 }
 
 function Testimonials() {
+  const { t } = useTranslation();
   return (
     <div className="w-full h-full  items-start flex mx-auto flex-col max-md:px-6  pt-10 pb-20 gap-10 overflow-hidden ">
       <h3 className=" mx-auto  text-3xl md:text-5xl font-bold text-blue-800 text-start">
-        Conheça a opinião dos nossos clientes
+        {t("testimonial.message")}
       </h3>
 
       <div className="mx-auto max-w-xs md:max-w-5xl">
@@ -119,6 +121,7 @@ function Testimonials() {
 }
 
 function Header() {
+  const { t } = useTranslation();
   return (
     <header
       className="h-20 fixed bg-white z-20 top-0 w-full items-center flex justify-center border-b
@@ -135,7 +138,7 @@ function Header() {
               to="/painel/login"
               className="flex gap-1  items-center justify-center text-blue-700"
             >
-              Acessar Painel <LogIn />
+              {t("header.accessPainel")} <LogIn />
             </Link>
           </Button>
         </div>
@@ -145,20 +148,19 @@ function Header() {
 }
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="h-16  w-full mx-auto border-t flex items-center justify-center bg-gray-100 text-[#101010] max-xl:px-6">
-      Meu Rango © 2024. All rights reserved.
+      {t("footer.message")}
     </footer>
   );
 };
 
 function LandingPage() {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col min-h-screen  mt-16 min-w-[400px]">
-      <Helmet
-        titleTemplate="Meu Rango - Gerenciamento de pedidos e cardápio virtual personalizado."
-        title="Meu Rango - Gerenciamento de pedidos e cardápio virtual personalizado."
-      />
+      <Helmet titleTemplate={t("pageTitle")} title={t("pageTitle")} />
       <Header />
       <Hero />
       <Services />
