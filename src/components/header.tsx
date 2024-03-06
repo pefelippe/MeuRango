@@ -8,7 +8,7 @@ import NavLink from "./nav-link";
 function Header() {
   return (
     <div className="border-b">
-      <div className="flex h-16 items-center gap-4 px-6">
+      <div className="flex h-16 items-center gap-4 px-6 ">
         <Logo />
         <Separator orientation="vertical" className="mx-3" />
         <nav className="flex items-center space-x-4 lg:space-x-6 mr-auto">

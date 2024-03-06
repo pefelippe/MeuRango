@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo";
 import { SignUp } from "@/components/Sign-up";
 import { Button } from "@/components/ui/button";
+
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -14,6 +15,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { services, testimonials } from "../consts/mockInfo";
+import FlagSelector from "@/components/FlagSelector";
 
 function Hero() {
   const { t } = useTranslation();
@@ -123,13 +125,11 @@ function Testimonials() {
 function Header() {
   const { t } = useTranslation();
   return (
-    <header
-      className="h-20 fixed bg-white z-20 top-0 w-full items-center flex justify-center border-b
-       max-xl:px-6"
-    >
+    <header className="h-20 bg-white w-full items-center flex justify-center max-w-7xl mx-auto  max-xl:px-6">
       <div className="flex w-full px-16 justify-between items-center ">
         <Logo />
-        <div className="flex gap-3">
+        <div className="flex gap-2 items-center">
+          <FlagSelector />
           <Button
             variant={"outline"}
             className="text-lg py-6 font-medium border-blue-700 hover:underline"
@@ -150,7 +150,7 @@ function Header() {
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="h-16  w-full mx-auto border-t flex items-center justify-center bg-gray-100 text-[#101010] max-xl:px-6">
+    <footer className="h-16  w-full mx-auto border-t flex items-center justify-center bg-gray-100/50 text-[#101010] max-xl:px-6">
       {t("footer.message")}
     </footer>
   );
@@ -159,7 +159,7 @@ const Footer = () => {
 function LandingPage() {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col min-h-screen  mt-16 min-w-[400px]">
+    <div className="flex flex-col min-h-screen x min-w-[400px]">
       <Helmet titleTemplate={t("pageTitle")} title={t("pageTitle")} />
       <Header />
       <Hero />

@@ -6089,7 +6089,7 @@ promise-retry@^2.0.1:
     err-code "^2.0.2"
     retry "^0.12.0"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6277,6 +6277,11 @@ re2@^1.17.7:
     nan "^2.18.0"
     node-gyp "^10.0.1"
 
+react-country-flag@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-country-flag/-/react-country-flag-3.1.0.tgz#f0c4c332934a77d3e894ba4800634f7a887e53d4"
+  integrity sha512-JWQFw1efdv9sTC+TGQvTKXQg1NKbDU2mBiAiRWcKM9F1sK+/zjhP2yGmm8YDddWyZdXVkR8Md47rPMJmo4YO5g==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -6289,6 +6294,13 @@ react-fast-compare@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.2.tgz#929a97a532304ce9fee4bcae44234f1ce2c21d49"
   integrity sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==
+
+react-flags@^0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/react-flags/-/react-flags-0.1.18.tgz#d763d7e802692a08e15d1802a51933a173f388fd"
+  integrity sha512-fa8D6DIZS6DWRqLcmKGIHVT13r4viHAfIRth9cFO7cDyxEPfTBbZei6p0Xeao6of4C/K4XU/j35aMjPC15ePIg==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-helmet-async@^2.0.4:
   version "2.0.4"
