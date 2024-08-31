@@ -1,4 +1,4 @@
-import { Menu, Sandwich } from "lucide-react";
+import { Menu, Sandwich, BarChart } from "lucide-react";
 
 export const testimonials = [
   {
@@ -56,5 +56,11 @@ export const services = [
     icon: <Sandwich className="w-16 h-16" />,
     description:
       "Após o cliente finalizar o pedido, este cai em uma tela de gestão dentro do sistema, permitindo que o dono do delivery gerencie as demandas de forma eficiente.",
+  },
+  {
+    name: "Análise de desempenho",
+    icon: <BarChart className="w-16 h-16" />,
+    description:
+      "Oferece insights valiosos sobre o desempenho do seu negócio, incluindo relatórios de vendas, itens mais populares e horários de pico, ajudando na tomada de decisões estratégicas.",
   },
 ];
