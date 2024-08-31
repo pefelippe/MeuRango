@@ -2,15 +2,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 
+interface PricingPlan {
+  name: string;
+  description: string;
+  price: string;
+  features: string[];
+}
+
 export function Pricing() {
   const { t } = useTranslation();
 
-  const pricingPlans = [
+  const pricingPlans: PricingPlan[] = [
     {
       name: t("pricing.plans.basic.name"),
       description: t("pricing.plans.basic.description"),
       price: t("pricing.plans.basic.price"),
-      features: t("pricing.plans.basic.features", { returnObjects: true }),
+      features: t("pricing.plans.basic.features", { returnObjects: true }) as string[],
     },
     {
       name: t("pricing.plans.professional.name"),
@@ -18,13 +25,13 @@ export function Pricing() {
       price: t("pricing.plans.professional.price"),
       features: t("pricing.plans.professional.features", {
         returnObjects: true,
-      }),
+      }) as string[],
     },
     {
       name: t("pricing.plans.premium.name"),
       description: t("pricing.plans.premium.description"),
       price: t("pricing.plans.premium.price"),
-      features: t("pricing.plans.premium.features", { returnObjects: true }),
+      features: t("pricing.plans.premium.features", { returnObjects: true }) as string[],
     },
   ];
 
