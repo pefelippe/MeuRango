@@ -12,47 +12,44 @@ export function HeaderLandingPage() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className=" w-full shadow-sm max-w-screen-2xl mx-auto">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <header className=" w-full shadow-sm mx-auto  bg-blue-800 text-white">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl ">
         <div className="flex justify-between items-center h-20">
           <Logo />
           <nav className="hidden md:flex space-x-6">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-700 font-medium"
+              className="text-gray-100 hover:text-blue-100 font-medium"
             >
               {t("header.home")}
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-blue-700 font-medium"
+              className="text-gray-100 hover:text-blue-100 font-medium"
             >
               {t("header.about")}
             </Link>
             <Link
               to="/services"
-              className="text-gray-700 hover:text-blue-700 font-medium"
+              className="text-gray-100 hover:text-blue-100 font-medium"
             >
               {t("header.services")}
             </Link>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-blue-700 font-medium"
+              className="text-gray-100 hover:text-blue-100 font-medium"
             >
               {t("header.contact")}
             </Link>
           </nav>
           <div className="hidden md:block">
-            <Button
-              variant="default"
-              className="w-full bg-blue-700 text-white py-6 hover:bg-blue-800 text-lg"
-            >
+            <Button variant="default">
               <Link
                 to="/painel/login"
-                className="flex items-center justify-center gap-2 4"
+                className="flex items-center justify-center gap-2 "
                 onClick={toggleMenu}
               >
-                {t("header.accessPanel")} <LogIn size={20} />
+                {t("header.accessPanel")} <LogIn size={24} />
               </Link>
             </Button>
           </div>

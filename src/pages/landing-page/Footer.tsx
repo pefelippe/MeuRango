@@ -4,7 +4,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className=" py-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <footer className=" py-8 border-t">
       <div className="max-w-7xl mx-auto px-4">
         <div className="  border-gray-700 text-center text-sm">
           <p>

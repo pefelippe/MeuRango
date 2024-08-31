@@ -16,13 +16,13 @@ function LandingPage() {
     <div className="flex flex-col min-h-screen min-w-[400px] w-full">
       <Helmet titleTemplate={t("pageTitle")} title={t("pageTitle")} />
       <HeaderLandingPage />
-      <main className="flex flex-col  mb-32">
+      <main className="flex flex-col ">
         <Hero />
         <Services />
         <Pricing />
-        <Testimonials />
         <FAQ />
-        <CallToAction />
+        {/* <Testimonials /> */}
+        {/* <CallToAction /> */}
       </main>
       <Footer />
     </div>

@@ -29,7 +29,7 @@ export function Pricing() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-800 py-32 min-h-screen flex flex-col items-center justify-center">
+    <section className="bg-gradient-to-br from-blue-900 via-indigo-800 to-indigo-800 py-32 min-h-screen flex flex-col items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 h-40">
           {" "}
@@ -45,58 +45,55 @@ export function Pricing() {
           {pricingPlans.map((plan) => (
             <Card
               key={plan.name}
-              className="bg-[#050e1b] text-white shadow-lg hover:shadow-xl border-none
-               border-blue-500 overflow-hidden flex flex-col h-full"
+              className="bg-white/10 backdrop-blur-lg text-white shadow-lg hover:shadow-xl border border-white/20 overflow-hidden flex flex-col h-full transition-all duration-300 hover:scale-105"
             >
-              <CardHeader className=" m-3 border-b border-blue-700 ">
+              <CardHeader className="p-8 border-b border-white/20">
                 <CardTitle className="text-2xl font-bold text-white mb-2">
                   {plan.name}
                 </CardTitle>
-                {/* <p className="text-blue-200">{plan.description}</p> */}
-              </CardHeader>
-              <CardContent className="py-6 flex-grow flex flex-col ">
-                <div className=" text-start ">
-                  <div className="flex items-end ">
-                    <p className="text-5xl font-bold text-white">
-                      {plan.price}{" "}
-                    </p>
-                    <p className="text-3xl font-semibold text-blue-200">
-                      {t("pricing.perMonth")}
-                    </p>
-                  </div>
-                  {/* <p className="text-xs text-blue-300 mt-2">
-                    {t("pricing.noCreditCard")}
-                  </p> */}
+                <div className="flex items-baseline mb-4">
+                  <span className="text-5xl font-extrabold text-white">
+                    {plan.price}
+                  </span>
+                  <span className="text-xl font-semibold text-blue-200 ml-2">
+                    {t("pricing.perMonth")}
+                  </span>
                 </div>
-                <Button
-                  variant="default"
-                  className="my-6 w-full bg-blue-500 hover:bg-blue-600 "
-                >
-                  {t("pricing.choosePlan")}
-                </Button>
-                <div className="border-t border-blue-700 pt-6">
-                  <ul className="space-y-2">
+
+                <p className="text-blue-200 text-xs  overflow-hidden overflow-ellipsis">
+                  {plan.description}
+                </p>
+              </CardHeader>
+              <CardContent className="p-8 flex-grow flex flex-col justify-between">
+                <div className="">
+                  <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li
                         key={index}
-                        className="flex items-center text-blue-200"
+                        className="flex items-center text-blue-100"
                       >
                         <svg
-                          className="w-4 h-4 mr-2 text-blue-500"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                          className="w-5 h-5 mr-3 text-blue-400"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
+                          <path d="M5 13l4 4L19 7"></path>
                         </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
+                <Button
+                  variant="default"
+                  className="w-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300 mt-6"
+                >
+                  {t("pricing.choosePlan")}
+                </Button>
               </CardContent>
             </Card>
           ))}
