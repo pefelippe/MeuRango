@@ -152,8 +152,11 @@ export default {
     },
     login: {
       title: "Acesse seu painel.",
-      signInGoogle: "Sign in with Google",
+      subtitle: "Faça login para gerenciar seu restaurante.",
+      signInGoogle: "Entrar com Google",
       demonstrationMode: "Modo Demonstração",
+      termsText: "Ao fazer login, você concorda com nossos",
+      termsLink: "Termos de Serviço",
     },
     callToAction: {
       title: "Pronto para começar?",

@@ -16,31 +16,44 @@ export function Login() {
   return (
     <>
       <Helmet title={t("login.title")} />
-      <div className="flex-col p-16 flex justify-center items-start w-full md:min-h-screen gap-2">
-        <div className="flex flex-col justify-center text-center items-center space-y-5 w-full mx-auto">
-          <h1 className="text-5xl font-bold tracking-tight text-primary">
-            {t("login.title")}
-          </h1>
+      <div className="flex items-center justify-center min-h-screen bg-blue-800">
+        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-2xl">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              {t("login.title")}
+            </h1>
+            <p className="text-gray-600">{t("login.subtitle")}</p>
+          </div>
 
-          <div className="flex w-full flex-col max-w-md gap-5">
+          <div className="space-y-4">
             <button
-              className="text-lg py-3 mx-auto font-medium px-8 w-full hover:underline border items-center justify-center flex gap-2 rounded-3xl"
+              className="w-full px-4 py-3 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 flex items-center justify-center space-x-2"
               onClick={signInGoogle}
             >
               <img
                 src="/google-color-icon.svg"
-                width={25}
-                height={25}
-                alt="google icon"
+                width={20}
+                height={20}
+                alt="Google icon"
+                className="inline-block"
               />
-              {t("login.signInGoogle")}
+              <span>{t("login.signInGoogle")}</span>
             </button>
             <button
-              className="text-lg py-3 mx-auto font-medium px-8 w-full hover:underline bg-blue-500 text-white rounded-3xl"
+              className="w-full px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300"
               onClick={setDemonstrationUser}
             >
               <Link to="/painel/dashboard">{t("login.demonstrationMode")}</Link>
             </button>
+          </div>
+
+          <div className="text-center text-sm text-gray-600">
+            <p>
+              {t("login.termsText")}{" "}
+              <a href="#" className="text-blue-600 hover:underline">
+                {t("login.termsLink")}
+              </a>
+            </p>
           </div>
         </div>
       </div>

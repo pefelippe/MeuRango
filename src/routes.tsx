@@ -21,17 +21,11 @@ export function AppLayout() {
 
 export function AuthLayout() {
   return (
-    <div className="relative  h-full w-full gap-16 grid grid-cols-1 md:grid-cols-2 ">
-      <div
-        className="flex flex-col text-start w-full md:min-h-screen justify-between gap-2  p-10 px-20
-       text-white bg-primary max-md:items-center"
-      >
+    <div className="relative h-full w-full flex flex-col md:flex-row ">
+      <div className="absolute m-8 text-white max-w-screen-2xl">
         <Logo />
-        <footer className="text-sm text-gray-300">
-          Painel do parceiro - {new Date().getFullYear()}
-        </footer>
       </div>
-      <div className=" h-full flex flex-col w-full mx-auto ">
+      <div className="flex-1 h-full flex flex-col w-full mx-auto ">
         <Outlet />
       </div>
     </div>

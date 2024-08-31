@@ -150,8 +150,11 @@ export default {
     },
     login: {
       title: "Access your panel.",
+      subtitle: "Sign in to manage your restaurant.",
       signInGoogle: "Sign in with Google",
       demonstrationMode: "Demonstration Mode",
+      termsText: "By signing in, you agree to our",
+      termsLink: "Terms of Service",
     },
     callToAction: {
       title: "Ready to Get Started?",

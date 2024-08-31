@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export function Hero() {
   const { t } = useTranslation();
   return (
-    <div className="relative bg-blue-800 text-white flex flex-col justify-between ">
+    <div className="relative bg-blue-800 text-white flex flex-col justify-center md:justify-between  md:min-h-screen ">
       <div className="flex flex-col justify-center pt-10 md:pt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="space-y-6 md:space-y-8 text-center">
@@ -24,7 +24,8 @@ export function Hero() {
         <img
           src="/screens/dashboard.png"
           alt="Platform Screenshot"
-          className="w-full h-auto max-w-full object-cover rounded-t-3xl shadow-2xl border-t-4 sm:border-t-8 border-r-4 sm:border-r-8 border-l-4 sm:border-l-8 border-gray-800"
+          className="w-full h-auto max-w-full object-cover rounded-t-3xl shadow-2xl min-h-[220px]
+          border-t-4 sm:border-t-8 border-r-4 sm:border-r-8 border-l-4 sm:border-l-8 border-gray-800"
           loading="lazy"
           srcSet="/screens/dashboard.png 1x, /screens/dashboard@2x.png 2x, /screens/dashboard@3x.png 3x"
         />
