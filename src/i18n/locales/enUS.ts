@@ -64,6 +64,7 @@ export default {
       backMessage: "Back to Dashboard",
     },
     dashboard: {
+      editStore: "Editar loja",
       manage: "Manage your store",
       title: "Dashboard",
       totalRevenue: "Total revenue in period",

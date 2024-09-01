@@ -11,7 +11,7 @@ import { OrderTableRecents } from "@/pages/painel/orders";
 
 export function RecentSales() {
   return (
-    <Card className="col-span-3 w-full  h-full ">
+    <Card className="col-span-3 w-full  h-full max-w-md">
       <CardHeader className="flex-row items-center justify-between pb-2">
         <div className="space-y-0 w-full">
           <CardTitle className="flex items-center justify-between w-full  ">
@@ -28,7 +28,7 @@ export function RecentSales() {
       </CardHeader>
       <CardContent className="w-full relative flex">
         <TableBody className="w-full h-full flex flex-col items-start ">
-          {Array.from({ length: 7 }).map((_, i) => {
+          {Array.from({ length: 10 }).map((_, i) => {
             return <OrderTableRecents key={i} />;
           })}
         </TableBody>

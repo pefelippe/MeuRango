@@ -22,7 +22,7 @@ export function AppLayout() {
 export function AuthLayout() {
   return (
     <div className="relative h-full w-full flex flex-col md:flex-row ">
-      <div className="absolute m-8 text-white max-w-screen-2xl">
+      <div className="fixed h-20 py-6 px-4 sm:px-6 lg:px-8  text-white z-50">
         <Logo />
       </div>
       <div className="flex-1 h-full flex flex-col w-full mx-auto ">

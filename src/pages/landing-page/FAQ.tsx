@@ -1,30 +1,54 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { t } = useTranslation();
+  const controls = useAnimation();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [controls]);
 
   const faqItems = [
     {
-      question: t("faq.whatCanIBuild"),
-      answer: t("faq.whatCanIBuildAnswer"),
+      question: t("faq.howItWorks"),
+      answer: t("faq.howItWorksAnswer"),
     },
     {
-      question: t("faq.useWithoutPayment"),
-      answer: t("faq.useWithoutPaymentAnswer"),
+      question: t("faq.integrationPOS"),
+      answer: t("faq.integrationPOSAnswer"),
     },
     {
-      question: t("faq.apiIntegration"),
-      answer: t("faq.apiIntegrationAnswer"),
+      question: t("faq.customization"),
+      answer: t("faq.customizationAnswer"),
     },
     {
-      question: t("faq.embedChatbot"),
-      answer: t("faq.embedChatbotAnswer"),
+      question: t("faq.dataAnalytics"),
+      answer: t("faq.dataAnalyticsAnswer"),
     },
     {
-      question: t("faq.credits"),
-      answer: t("faq.creditsAnswer"),
+      question: t("faq.support"),
+      answer: t("faq.supportAnswer"),
     },
   ];
 
@@ -33,8 +57,16 @@ export function FAQ() {
   };
 
   return (
-    <section id="#faq" className=" bg-gray-100 py-32">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="#faq" className="bg-gray-100 py-32" ref={ref}>
+      <motion.div
+        className="max-w-7xl mx-auto px-4"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        }}
+      >
         <div className="flex flex-col md:flex-row gap-16">
           <div className="md:w-2/4">
             <h2 className="text-3xl md:text-5xl font-extrabold text-blue-800 mb-6">
@@ -47,26 +79,45 @@ export function FAQ() {
           </div>
           <div className="md:w-2/4 space-y-4">
             {faqItems.map((item, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg shadow-md"
+              >
                 <button
                   className="w-full text-left p-4 focus:outline-none"
                   onClick={() => toggleFAQ(index)}
                 >
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">{item.question}</span>
-                    <span>{openIndex === index ? "−" : "+"}</span>
+                    <motion.span
+                      animate={{ rotate: openIndex === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {openIndex === index ? "−" : "+"}
+                    </motion.span>
                   </div>
                 </button>
-                {openIndex === index && (
-                  <div className="p-4 pt-0">
-                    <p>{item.answer}</p>
-                  </div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="p-4 pt-0"
+                    >
+                      <p>{item.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

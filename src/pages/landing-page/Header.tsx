@@ -13,36 +13,38 @@ export function HeaderLandingPage() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="fixed w-full shadow-sm mx-auto bg-blue-800 text-white z-50">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl">
-        <div className="flex justify-between items-center h-20">
-          <Logo />
-          <nav className="hidden md:flex space-x-6">
-            <ScrollLink
-              to="#services"
-              smooth={true}
-              duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-            >
-              Services
-            </ScrollLink>
-            <ScrollLink
-              to="#pricing"
-              smooth={true}
-              duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-            >
-              Pricing
-            </ScrollLink>
-            <ScrollLink
-              to="#faq"
-              smooth={true}
-              duration={500}
-              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-            >
-              FAQ
-            </ScrollLink>
-          </nav>
+    <header className="fixed w-full mx-auto bg-blue-800 text-white z-50">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="flex justify-between items-center h-20 w-full">
+          <div className="flex justify-start items-center gap-8">
+            <Logo />
+            <nav className="hidden md:flex space-x-6">
+              <ScrollLink
+                to="#services"
+                smooth={true}
+                duration={500}
+                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              >
+                Services
+              </ScrollLink>
+              <ScrollLink
+                to="#pricing"
+                smooth={true}
+                duration={500}
+                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              >
+                Pricing
+              </ScrollLink>
+              <ScrollLink
+                to="#faq"
+                smooth={true}
+                duration={500}
+                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+              >
+                FAQ
+              </ScrollLink>
+            </nav>
+          </div>
           <div className="hidden md:block">
             <Button variant="default">
               <Link

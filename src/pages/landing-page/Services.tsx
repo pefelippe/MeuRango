@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export function Services() {
   const { t } = useTranslation();
@@ -8,9 +9,14 @@ export function Services() {
       className="bg-gradient-to-b from-white to-gray-100 py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-blue-800 text-center mb-20">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-5xl font-extrabold text-blue-800 text-center mb-20"
+        >
           {t("services.title")}
-        </h2>
+        </motion.h2>
         <div className="flex flex-col space-y-32 items-start">
           <ServiceColumn
             title={t("services.orderManagement.title")}
@@ -64,8 +70,20 @@ function ServiceColumn({
   const imageOrder = imageOnRight ? "order-2 md:order-2" : "order-2 md:order-1";
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-16  max-w-6xl mx-auto">
-      <div className={`md:w-1/2 ${contentOrder}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="flex flex-col md:flex-row items-center gap-16 max-w-6xl mx-auto"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: imageOnRight ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className={`md:w-1/2 ${contentOrder}`}
+      >
         <h3 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4">
           {title}
         </h3>
@@ -88,14 +106,20 @@ function ServiceColumn({
             </li>
           ))}
         </ul>
-      </div>
-      <div className={`md:w-1/2 ${imageOrder}`}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: imageOnRight ? 50 : -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className={`md:w-1/2 ${imageOrder}`}
+      >
         <img
           src={imageSrc}
           alt={title}
           className="w-full h-auto rounded-xl shadow-lg"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -1,6 +1,8 @@
+import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 interface PricingPlan {
   name: string;
@@ -11,6 +13,8 @@ interface PricingPlan {
 
 export function Pricing() {
   const { t } = useTranslation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const pricingPlans: PricingPlan[] = [
     {
@@ -26,14 +30,6 @@ export function Pricing() {
       description: t("pricing.plans.professional.description"),
       price: t("pricing.plans.professional.price"),
       features: t("pricing.plans.professional.features", {
-        returnObjects: true,
-      }) as string[],
-    },
-    {
-      name: t("pricing.plans.premium.name"),
-      description: t("pricing.plans.premium.description"),
-      price: t("pricing.plans.premium.price"),
-      features: t("pricing.plans.premium.features", {
         returnObjects: true,
       }) as string[],
     },
@@ -55,61 +51,73 @@ export function Pricing() {
             {t("pricing.introduction")}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan) => (
-            <Card
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {pricingPlans.map((plan, index) => (
+            <motion.div
               key={plan.name}
-              className="bg-white/10 backdrop-blur-lg text-white shadow-lg hover:shadow-xl border border-white/20 overflow-hidden flex flex-col h-full transition-all duration-300 hover:scale-105"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <CardHeader className="p-8 border-b border-white/20">
-                <CardTitle className="text-2xl font-bold text-white mb-2">
-                  {plan.name}
-                </CardTitle>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-5xl font-extrabold text-white">
-                    {plan.price}
-                  </span>
-                  <span className="text-xl font-semibold text-blue-200 ml-2">
-                    {t("pricing.perMonth")}
-                  </span>
-                </div>
+              <Card
+                className="bg-white/10 backdrop-blur-lg hover:border-white text-white shadow-lg hover:shadow-xl border
+                 border-white/20 overflow-hidden flex flex-col h-full transition-all duration-300 hover:scale-105"
+              >
+                <CardHeader className="p-8 border-b border-white/20">
+                  <CardTitle className="text-2xl font-bold text-white mb-2">
+                    {plan.name}
+                  </CardTitle>
+                  <div className="flex items-baseline mb-4">
+                    <span className="text-5xl font-extrabold text-white">
+                      {plan.price}
+                    </span>
+                    <span className="text-xl font-semibold text-blue-200 ml-2">
+                      {t("pricing.perMonth")}
+                    </span>
+                  </div>
 
-                <p className="text-blue-200 text-xs  overflow-hidden overflow-ellipsis">
-                  {plan.description}
-                </p>
-              </CardHeader>
-              <CardContent className="p-8 flex-grow flex flex-col justify-between">
-                <div className="">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center text-blue-100"
-                      >
-                        <svg
-                          className="w-5 h-5 mr-3 text-blue-400"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
+                  <p className="text-blue-200 text-sm  overflow-hidden overflow-ellipsis">
+                    {plan.description}
+                  </p>
+                </CardHeader>
+                <CardContent className="p-8 flex-grow flex flex-col justify-between">
+                  <div className="">
+                    <ul className="space-y-3">
+                      {plan.features.map((feature, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center text-blue-100"
                         >
-                          <path d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <Button
-                  variant="default"
-                  className="w-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300 mt-6"
-                >
-                  {t("pricing.choosePlan")}
-                </Button>
-              </CardContent>
-            </Card>
+                          <svg
+                            className="w-5 h-5 mr-3 text-blue-400"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path d="M5 13l4 4L19 7"></path>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button
+                      variant="default"
+                      className="w-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300 mt-6"
+                    >
+                      {t("pricing.choosePlan")}
+                    </Button>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

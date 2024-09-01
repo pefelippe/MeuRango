@@ -25,6 +25,7 @@
     "embla-carousel-react": "8.0.0-rc19",
     "firebase": "^10.8.0",
     "firebase-tools": "^13.3.0",
+    "framer-motion": "^11.3.31",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "localforage": "^1.10.0",

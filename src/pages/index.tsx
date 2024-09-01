@@ -8,18 +8,20 @@ import { FAQ } from "./landing-page/FAQ";
 
 import { Footer } from "./landing-page/Footer";
 import { Services } from "./landing-page/Services";
+import { CallToAction } from "./landing-page/CallToAction";
 
 function LandingPage() {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col min-h-screen min-w-[400px] w-full bg-blue-800">
+    <div className="flex flex-col min-h-screen min-w-[400px] w-full ">
       <Helmet titleTemplate={t("pageTitle")} title={t("pageTitle")} />
       <HeaderLandingPage />
-      <main className="flex flex-col mt-32 ">
+      <main className="flex flex-col  ">
         <Hero />
         <Services />
         <Pricing />
         <FAQ />
+        <CallToAction />
       </main>
       <Footer />
     </div>
