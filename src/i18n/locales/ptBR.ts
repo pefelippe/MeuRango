@@ -72,6 +72,7 @@ export default {
       canceledOrdersToday: "Pedidos cancelados (hoje)",
       backToDashboard: "Voltar para o Painel de Controle",
       diffComparedToLastMonth: "em relação ao mês passado",
+      averageOrderValue: "Valor médio do pedido",
     },
     orderDetails: {
       order: "Pedido",
