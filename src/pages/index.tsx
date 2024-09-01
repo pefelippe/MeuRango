@@ -12,10 +12,10 @@ import { Services } from "./landing-page/Services";
 function LandingPage() {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col min-h-screen min-w-[400px] w-full">
+    <div className="flex flex-col min-h-screen min-w-[400px] w-full bg-blue-800">
       <Helmet titleTemplate={t("pageTitle")} title={t("pageTitle")} />
       <HeaderLandingPage />
-      <main className="flex flex-col ">
+      <main className="flex flex-col mt-32 ">
         <Hero />
         <Services />
         <Pricing />

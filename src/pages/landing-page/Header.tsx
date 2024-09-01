@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LogIn, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
 
 export function HeaderLandingPage() {
@@ -12,35 +13,35 @@ export function HeaderLandingPage() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className=" w-full shadow-sm mx-auto  bg-blue-800 text-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl ">
+    <header className="fixed w-full shadow-sm mx-auto bg-blue-800 text-white z-50">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl">
         <div className="flex justify-between items-center h-20">
           <Logo />
           <nav className="hidden md:flex space-x-6">
-            <Link
-              to="/"
-              className="text-gray-100 hover:text-blue-100 font-medium"
+            <ScrollLink
+              to="#services"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
             >
-              {t("header.home")}
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-100 hover:text-blue-100 font-medium"
+              Services
+            </ScrollLink>
+            <ScrollLink
+              to="#pricing"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
             >
-              {t("header.about")}
-            </Link>
-            <Link
-              to="/services"
-              className="text-gray-100 hover:text-blue-100 font-medium"
+              Pricing
+            </ScrollLink>
+            <ScrollLink
+              to="#faq"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
             >
-              {t("header.services")}
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-100 hover:text-blue-100 font-medium"
-            >
-              {t("header.contact")}
-            </Link>
+              FAQ
+            </ScrollLink>
           </nav>
           <div className="hidden md:block">
             <Button variant="default">
@@ -63,7 +64,7 @@ export function HeaderLandingPage() {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
           <div className="fixed right-0 top-0 bottom-0 w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out">
-            <div className="p-6 flex justify-between items-center border-b border-gray-200">
+            <div className="p-6 flex justify-between items-center ">
               <Logo />
               <Button
                 variant="ghost"

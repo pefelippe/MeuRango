@@ -17,7 +17,9 @@ export function Pricing() {
       name: t("pricing.plans.basic.name"),
       description: t("pricing.plans.basic.description"),
       price: t("pricing.plans.basic.price"),
-      features: t("pricing.plans.basic.features", { returnObjects: true }) as string[],
+      features: t("pricing.plans.basic.features", {
+        returnObjects: true,
+      }) as string[],
     },
     {
       name: t("pricing.plans.professional.name"),
@@ -31,12 +33,17 @@ export function Pricing() {
       name: t("pricing.plans.premium.name"),
       description: t("pricing.plans.premium.description"),
       price: t("pricing.plans.premium.price"),
-      features: t("pricing.plans.premium.features", { returnObjects: true }) as string[],
+      features: t("pricing.plans.premium.features", {
+        returnObjects: true,
+      }) as string[],
     },
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-900 via-indigo-800 to-indigo-800 py-32 min-h-screen flex flex-col items-center justify-center">
+    <section
+      id="#pricing"
+      className="bg-blue-800 py-32 min-h-screen flex flex-col items-center justify-center"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 h-40">
           {" "}

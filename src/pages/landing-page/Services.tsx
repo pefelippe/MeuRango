@@ -3,7 +3,10 @@ import { useTranslation } from "react-i18next";
 export function Services() {
   const { t } = useTranslation();
   return (
-    <section className="bg-gradient-to-b from-white to-gray-100 py-24">
+    <section
+      id="#services"
+      className="bg-gradient-to-b from-white to-gray-100 py-24"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-5xl font-extrabold text-blue-800 text-center mb-20">
           {t("services.title")}
