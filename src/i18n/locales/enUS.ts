@@ -71,6 +71,7 @@ export default {
       canceledOrdersToday: "Canceled orders (today)",
       backToDashboard: "Back to Dashboard",
       diffComparedToLastMonth: "compared to last month",
+      averageOrderValue: "Average order value",
     },
     pricing: {
       title: "Our Plans",
