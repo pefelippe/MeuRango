@@ -18,33 +18,33 @@ export function HeaderLandingPage() {
         <div className="flex justify-between items-center h-20 w-full">
           <div className="flex justify-start items-center gap-8">
             <Logo />
-            <nav className="hidden md:flex space-x-6">
-              <ScrollLink
-                to="#services"
-                smooth={true}
-                duration={500}
-                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-              >
-                Services
-              </ScrollLink>
-              <ScrollLink
-                to="#pricing"
-                smooth={true}
-                duration={500}
-                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-              >
-                Pricing
-              </ScrollLink>
-              <ScrollLink
-                to="#faq"
-                smooth={true}
-                duration={500}
-                className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
-              >
-                FAQ
-              </ScrollLink>
-            </nav>
           </div>
+          <nav className="hidden md:flex space-x-6">
+            <ScrollLink
+              to="#services"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+            >
+              Services
+            </ScrollLink>
+            <ScrollLink
+              to="#pricing"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+            >
+              Pricing
+            </ScrollLink>
+            <ScrollLink
+              to="#faq"
+              smooth={true}
+              duration={500}
+              className="text-gray-100 hover:text-blue-100 font-medium cursor-pointer"
+            >
+              FAQ
+            </ScrollLink>
+          </nav>
           <div className="hidden md:block">
             <Button variant="default">
               <Link
