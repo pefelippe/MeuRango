@@ -48,8 +48,7 @@ export function Hero() {
           className="w-full h-auto max-w-full object-cover rounded-t-3xl shadow-2xl min-h-[260px]
           border-t-4 sm:border-t-8 border-r-4 sm:border-r-8 border-l-4 sm:border-l-8 border-gray-800"
           loading="lazy"
-          src="/screens/dashboard.png"
-          srcSet="/screens/dashboard.png 1x, /screens/dashboard@2x.png 2x, /screens/dashboard@3x.png 3x"
+          src="/public/orders.png"
         />
       </motion.div>
     </div>
